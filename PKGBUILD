@@ -1,41 +1,40 @@
 ## $Id$
 # Contributor: Bart Ribbers <bribbers@disroot.org>
 # Contributor: Alexey Andreyev <aa13q@ya.ru>
+# Contributor: Chipligin Sergey (NeoChapay) <neochapay@gmail.com>
 # Maintainer: James Kittsmiller (AJSlye) <james@nulogicsystems.com>
 
 pkgname=lipstick-glacier-home-git
 _host="github.com"
 _project=nemomobile-ux
 _branch=master
-pkgver=0.34.0.r29.g7bb15ad
+pkgver=0.37.1.r3.g55fd039
 pkgrel=1
 pkgdesc="A nice homescreen for Glacier experience"
 arch=('x86_64' 'aarch64')
 url="https://$_host/$_project/glacier-home"
 license=('BSD-3-Clause AND MIT')
-depends=('bluez-qt' 
-	'qt5-graphicaleffects' 
-	'qt5-multimedia' 
-	'qt5-feedback' 
-	'qt5-mpris-git' 
-	'qt5-lipstick-git' 
-	'qt5-quickcontrols-nemo-git' 
-	'nemo-qml-plugin-configuration-git' 
-	'nemo-qml-plugin-statusnotifier-git' 
-	'nemo-qml-plugin-time-git' 
-	'nemo-qml-plugin-contacts-git' 
-	'nemo-qml-plugin-notifications-git' 
-	'nemo-qml-plugin-connectivity-git' 
-	'glacier-settings-git' 
-	'geoclue>2.0' 
+depends=('bluez-qt'
+	'qt5-graphicaleffects'
+	'qt5-multimedia'
+	'qt5-feedback'
+	'qt5-mpris-git'
+	'qt5-lipstick-git'
+	'qt5-quickcontrols-nemo-git'
+	'nemo-qml-plugin-configuration-git'
+	'nemo-qml-plugin-statusnotifier-git'
+	'nemo-qml-plugin-time-git'
+	'nemo-qml-plugin-contacts-git'
+	'nemo-qml-plugin-notifications-git'
+	'nemo-qml-plugin-connectivity-git'
+	'glacier-settings-git'
+	'geoclue>2.0'
 	'mlite'
 	'qt-mobility-haptics-ffmemless-git'
 	'ngfd-git'
-	'pulseaudio-module-keepalive'
-	'pulseaudio-modules-nemo'
-	'polkit-qt5')
+	'pulseaudio-module-keepalive')
 
-makedepends=('git' 'extra-cmake-modules' 'qt5-wayland' 'qt5-tools' 'nemo-qml-plugin-devicelock' 'bluez-qt')
+makedepends=('git' 'extra-cmake-modules' 'qt5-wayland' 'qt5-tools' 'nemo-qml-plugin-devicelock' 'bluez-qt' 'polkit-qt5')
 optdepends=()
 provides=("${pkgname%-git}")
 conflicts=("${pkgname%-git}")
