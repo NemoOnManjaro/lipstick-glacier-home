@@ -8,7 +8,7 @@ pkgname=lipstick-glacier-home-git
 _host="github.com"
 _project=nemomobile-ux
 _branch=master
-pkgver=0.37.2.r12.g73dbc2f
+pkgver=0.37.5.r0.g5852cdf
 pkgrel=1
 pkgdesc="A nice homescreen for Glacier experience"
 arch=('x86_64' 'aarch64')
@@ -18,23 +18,30 @@ depends=('bluez-qt'
 	'qt5-graphicaleffects'
 	'qt5-multimedia'
 	'qt5-feedback'
-	'qt5-mpris-git'
+	'qtmpris'
 	'qt5-lipstick-git'
 	'qt5-quickcontrols-nemo-git'
-	'nemo-qml-plugin-configuration-git'
-	'nemo-qml-plugin-statusnotifier-git'
-	'nemo-qml-plugin-time-git'
-	'nemo-qml-plugin-contacts-git'
-	'nemo-qml-plugin-notifications-git'
-	'nemo-qml-plugin-connectivity-git'
+	'nemo-qml-plugin-configuration'
+	'nemo-qml-plugin-statusnotifier'
+	'nemo-qml-plugin-time'
+	'nemo-qml-plugin-contacts'
+	'nemo-qml-plugin-notifications'
+	'nemo-qml-plugin-connectivity'
 	'glacier-settings-git'
-	'geoclue>2.0'
+	'geoclue1'
 	'mlite'
-	'qt-mobility-haptics-ffmemless-git'
-	'ngfd-git'
+	'qt-mobility-haptics-ffmemless'
+	'ngfd'
 	'pulseaudio-module-keepalive')
 
-makedepends=('git' 'extra-cmake-modules' 'qt5-wayland' 'qt5-tools' 'nemo-qml-plugin-devicelock' 'bluez-qt' 'polkit-qt5')
+makedepends=('git'
+	'extra-cmake-modules'
+	'qt5-wayland'
+	'qt5-tools'
+	'nemo-qml-plugin-devicelock'
+	'bluez-qt'
+	'polkit-qt5'
+	'mce-headers>=1.30.0')
 optdepends=()
 provides=("${pkgname%-git}")
 conflicts=("${pkgname%-git}")
@@ -59,7 +66,8 @@ build() {
         -DCMAKE_BUILD_TYPE=None \
         -DCMAKE_INSTALL_PREFIX=/usr \
         -DCMAKE_INSTALL_LIBDIR=lib \
-        -DCMAKE_INSTALL_SYSCONFDIR=/etc
+        -DCMAKE_INSTALL_SYSCONFDIR=/etc \
+        -DUSE_GEOCLUE2=false
   make -C build
 }
 
@@ -67,4 +75,3 @@ package() {
   cd "${srcdir}/${pkgname}"
   DESTDIR="$pkgdir" make -C build install
 }
- 
