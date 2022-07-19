@@ -8,7 +8,7 @@ pkgname=lipstick-glacier-home-git
 _host="github.com"
 _project=nemomobile-ux
 _branch=master
-pkgver=0.37.5.r0.g5852cdf
+pkgver=0.37.6
 pkgrel=1
 pkgdesc="A nice homescreen for Glacier experience"
 arch=('x86_64' 'aarch64')
@@ -19,23 +19,22 @@ depends=('bluez-qt'
 	'qt5-multimedia'
 	'qt5-feedback'
 	'qtmpris'
-	'qt5-lipstick-git'
-	'qt5-quickcontrols-nemo-git'
+	'qt5-lipstick'
+	'qt5-quickcontrols-nemo'
 	'nemo-qml-plugin-configuration'
 	'nemo-qml-plugin-statusnotifier'
 	'nemo-qml-plugin-time'
 	'nemo-qml-plugin-contacts'
 	'nemo-qml-plugin-notifications'
 	'nemo-qml-plugin-connectivity'
-	'glacier-settings-git'
+	'glacier-settings'
 	'geoclue1'
 	'mlite'
 	'qt-mobility-haptics-ffmemless'
 	'ngfd'
 	'pulseaudio-module-keepalive')
 
-makedepends=('git'
-	'extra-cmake-modules'
+makedepends=(	'extra-cmake-modules'
 	'qt5-wayland'
 	'qt5-tools'
 	'nemo-qml-plugin-devicelock'
@@ -43,18 +42,8 @@ makedepends=('git'
 	'polkit-qt5'
 	'mce-headers>=1.30.0')
 optdepends=()
-provides=("${pkgname%-git}")
-conflicts=("${pkgname%-git}")
-source=("${pkgname}::git+${url}")
-sha512sums=('SKIP')
-
-pkgver() {
-  cd "${srcdir}/${pkgname}"
-  ( set -o pipefail
-    git describe --long --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g' ||
-    printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
-  ) 2>/dev/null
-}
+source=("${url}/archive/refs/tags/$pkgver.tar.gz")
+sha256sums=('d9a5a07bf54ae4988ff16d034aba9ae656dfc1629d1b099b71084934f8136901')
 
 prepare() {
     cd "${srcdir}/${pkgname}"
