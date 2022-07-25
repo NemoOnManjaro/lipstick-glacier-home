@@ -45,12 +45,8 @@ optdepends=()
 source=("${url}/archive/refs/tags/$pkgver.tar.gz")
 sha256sums=('d9a5a07bf54ae4988ff16d034aba9ae656dfc1629d1b099b71084934f8136901')
 
-prepare() {
-    cd "${srcdir}/${pkgname}"
-}
-
 build() {
-  cd "${srcdir}/${pkgname}"
+  cd glacier-home-$pkgver
   cmake -B build \
         -DCMAKE_BUILD_TYPE=None \
         -DCMAKE_INSTALL_PREFIX=/usr \
@@ -61,6 +57,6 @@ build() {
 }
 
 package() {
-  cd "${srcdir}/${pkgname}"
+  cd glacier-home-$pkgver
   DESTDIR="$pkgdir" make -C build install
 }
