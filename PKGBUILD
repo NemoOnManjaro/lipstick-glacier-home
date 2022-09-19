@@ -9,7 +9,7 @@ _host="github.com"
 _project=nemomobile-ux
 _branch=master
 pkgver=0.37.7
-pkgrel=1
+pkgrel=2
 pkgdesc="A nice homescreen for Glacier experience"
 arch=('x86_64' 'aarch64')
 url="https://$_host/$_project/glacier-home"
@@ -37,13 +37,14 @@ depends=('bluez-qt'
 	'qt5-wayland'
 	'qt5-tools'
 	'polkit-qt5'
-	'pulseaudio-module-keepalive')
+	'pulseaudio-module-keepalive'
+	'glacier-settings-developermode')
 
 makedepends=('extra-cmake-modules'
 	'mce-headers>=1.30.0')
 optdepends=()
 source=("${url}/archive/refs/tags/$pkgver.tar.gz")
-sha256sums=('3b137a5b35a99b62a0d2ec5623c64aa220674e1065f564b8deceeb019e453b7d')
+sha256sums=('a25675aa09a72c19b4daaa5acf7aba89e31f17b26b79be0fd8a7fc8c53a4273a')
 
 build() {
   cd glacier-home-$pkgver
