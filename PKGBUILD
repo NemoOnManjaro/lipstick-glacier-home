@@ -8,7 +8,7 @@ pkgname=lipstick-glacier-home
 _host="github.com"
 _project=nemomobile-ux
 _branch=master
-pkgver=0.40.3
+pkgver=0.40.4
 pkgrel=1
 pkgdesc="A nice homescreen for Glacier experience"
 arch=('x86_64' 'aarch64')
@@ -44,7 +44,7 @@ makedepends=('extra-cmake-modules'
 	'qt5-tools')
 optdepends=()
 source=("${url}/archive/refs/tags/$pkgver.tar.gz")
-sha256sums=('af8cd73aff853803ef4312127d09a38478883b9f928e453aabb9cdc2a105e7c8')
+sha256sums=('4889889c4ae8268f78629e9f60b476f87e825319eb2a520c72fa2f4f25001458')
 
 build() {
   cd glacier-home-$pkgver
@@ -60,4 +60,8 @@ build() {
 package() {
   cd glacier-home-$pkgver
   DESTDIR="$pkgdir" make -C build install
+
+  #setup services
+  install -d ${pkgdir}/usr/lib/systemd/user/user-session.target.wants/
+  ln -s ../lipstick.service ${pkgdir}/usr/lib/systemd/user/user-session.target.wants/
 }
