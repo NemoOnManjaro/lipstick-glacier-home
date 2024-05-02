@@ -9,7 +9,7 @@ _host="github.com"
 _project=nemomobile-ux
 _branch=master
 pkgver=1.0.3
-pkgrel=1
+pkgrel=2
 pkgdesc="A nice homescreen for Glacier experience"
 arch=('x86_64' 'aarch64')
 url="https://$_host/$_project/glacier-home"
@@ -18,17 +18,17 @@ depends=('qt6-multimedia'
 	'qt6-feedback'
 	'qtmpris'
 	'qt6-lipstick'
-	'qt6-quickcontrols-nemo'
-	'nemo-qml-plugin-configuration'
+	'qt6-quickcontrols-nemo>=6.0.0'
+	'nemo-qml-plugin-configuration>=0.2.8'
 	'nemo-qml-plugin-statusnotifier'
-	'nemo-qml-plugin-time'
-	'nemo-qml-plugin-contacts'
-	'nemo-qml-plugin-notifications'
-	'nemo-qml-plugin-connectivity'
-	'glacier-settings'
+	'nemo-qml-plugin-time>=0.1.7'
+	'nemo-qml-plugin-contacts>=0.3.27'
+	'nemo-qml-plugin-notifications>=1.2.25'
+	'nemo-qml-plugin-connectivity>=0.2.15'
+	'glacier-settings>=0.8'
 	'geoclue1'
-	'mlite'
-	'qt-mobility-haptics-ffmemless'
+	'mlite6'
+	'qt-mobility-haptics-ffmemless>=0.2.9'
 	'ngfd'
 	'nemo-qml-plugin-devicelock'
 	'bluez-qt6'
@@ -37,7 +37,7 @@ depends=('qt6-multimedia'
 	'pulseaudio-module-keepalive'
 	'glacier-settings-developermode')
 
-makedepends=('extra-cmake-modules'
+makedepends=('extra-cmake-modules-qt6'
 	'mce-headers>=1.30.0'
 	'qt6-tools')
 optdepends=()
