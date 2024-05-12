@@ -37,7 +37,7 @@ depends=('qt6-multimedia'
 	'pulseaudio-module-keepalive'
 	'glacier-settings-developermode')
 
-makedepends=('extra-cmake-modules-qt6'
+makedepends=('extra-cmake-modules>=6.0'
 	'mce-headers>=1.30.0'
 	'qt6-tools')
 optdepends=()
