@@ -8,8 +8,8 @@ pkgname=lipstick-glacier-home
 _host="github.com"
 _project=nemomobile-ux
 _branch=master
-pkgver=1.0.3
-pkgrel=3
+pkgver=1.1
+pkgrel=1
 pkgdesc="A nice homescreen for Glacier experience"
 arch=('x86_64' 'aarch64')
 url="https://$_host/$_project/glacier-home"
@@ -22,7 +22,6 @@ depends=('qt6-multimedia'
 	'nemo-qml-plugin-configuration>=0.2.8'
 	'nemo-qml-plugin-statusnotifier'
 	'nemo-qml-plugin-time>=0.1.7'
-	'nemo-qml-plugin-contacts>=0.3.27'
 	'nemo-qml-plugin-notifications>=1.2.25'
 	'nemo-qml-plugin-connectivity>=0.2.15'
 	'glacier-settings>=0.8'
@@ -42,7 +41,7 @@ makedepends=('extra-cmake-modules>=6.0'
 	'qt6-tools')
 optdepends=()
 source=("${url}/archive/refs/tags/$pkgver.tar.gz")
-sha256sums=('d742669e8179bf12070f813f39dfc7f36194ae87be56f25221fd53fe1ea3b675')
+sha256sums=('5f25f7f10d17a6995d9d1fa44c106f8e7304581af37462ff115f72825cf23354')
 
 build() {
   cd glacier-home-$pkgver
