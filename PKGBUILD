@@ -8,7 +8,7 @@ pkgname=lipstick-glacier-home
 _host="github.com"
 _project=nemomobile-ux
 _branch=master
-pkgver=1.1
+pkgver=1.1.1
 pkgrel=1
 pkgdesc="A nice homescreen for Glacier experience"
 arch=('x86_64' 'aarch64')
@@ -16,7 +16,7 @@ url="https://$_host/$_project/glacier-home"
 license=('BSD-3-Clause AND MIT')
 depends=('qt6-multimedia'
 	'qt6-feedback'
-	'qtmpris'
+	'amber-mpris'
 	'qt6-lipstick'
 	'qt6-quickcontrols-nemo>=6.0.0'
 	'nemo-qml-plugin-configuration>=0.2.8'
